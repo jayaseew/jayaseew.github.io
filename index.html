@@ -1,11 +1,20 @@
+<!DOCTYPE html>
 <html>
+
  
-<font color="blue" size="14">Uniprint Troubleshooting</font>
+<font color="green" size="14" font face="arial">Uniprint Troubleshooting</font>
+<font face="arial">
 <div id="General" style="display:block;">
 <p><img src="https://confluence.linz.govt.nz/download/attachments/21344771/image2019-2-8_16-24-27.png"></p>
 <p><font color="red">Note:</font> This troubleshooting assumes you've already checked the Uniprint Settings. If you aren't sure whether they're correct, refer to the above screenshot for the recommended settings. If the user is getting a specific error when trying to print, <input type="button" value="click here" onclick="UniprintErrors()" /> otherwise, continue reading:</p>
 
-<p></p><br></br> <p>Establish whether its Uniprint or their printer settings that is causing the problem</p> <br></br> <input type="button" value="I know Uniprint is at fault" onclick="showUPatFault()" /> <input type="button" value="I'm not sure" onclick="showUnsureifUP()" /> <input type="button" value="Hide All" onclick="HideAll()" /> 
+<p></p><br></br> <p>Establish whether its Uniprint or their printer settings that is causing the problem</p> <br></br> <button class="button" input type="button" onclick="showUPatFault()">Uniprint is at fault </button> 
+
+
+<button class="button" input type="button" onclick="showUnsureifUP()">Unsure what is at fault </button>  
+
+<button class="button" input type="button" onclick="HideAll()">Hide All </button> 
+
 </div>
 
 <div id="UniprintErrors" style="display:none;">
@@ -21,7 +30,7 @@
 <br><a href="https://confluence.linz.govt.nz/display/CSC/Message+229">Message 229</a>
 <br><a href="https://confluence.linz.govt.nz/display/CSC/The+Data+Area+Path+to+a+System+Call+is+too+small">Data Area Path to a System Call is too small"</a>
 
-<p><input type="button" value="Back" onclick="General()" /><p>
+<p><button class="button" input type="button" onclick="General()">Back</button><p>
 </div>
 
  
@@ -46,8 +55,8 @@
 <div id="showUPatFault"  style="display:none;"> Get the user to close out of Uniprint via System Tray, and then relaunch it. The user does not need to close out of Landonline to do this, they can just minimise it for now.
 <p></p>
 <br></br>
-<input type="button" value="Show me how to do this" onclick="showHowtoExit()" />
-<input type="button" value="I did this and it still didn't work" onclick="HowtoadjustCitrix()" /> 
+<button class="button" input type="button" onclick="showHowtoExit()">Show me how to do this</button>
+<button class="button" input type="button" onclick="HowtoadjustCitrix()">I did this and it still didn't work</button>
 </div>
 <p>
 <div id="HowtoExpand" style="display:none;"> <b>Expanding System Tray:</b> This is fairly easy, just ask the user to click the arrow symbol to the left of the icons in their system tray.<p> <br><img src="https://i.imgur.com/WthZpUj.png"></br></p></div>
@@ -90,10 +99,6 @@ If restarting Uniprint didn't resolve the issue, lets ensure the Citrix permissi
 <p>You'll need to get the user to Uninstall/Reinstall Uniprint, restart the PC, and then try again.</p>
  </div>
 
-
-
-
-</html>
 
  <style>
   .button {
@@ -202,3 +207,33 @@ document.getElementById('UniprintErrors').style.display = "none";
 document.getElementById('General').style.display = "block"; }
 
 </script>
+<head>
+<style>
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+</head>
+
+
+
+
