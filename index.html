@@ -1,1 +1,180 @@
-<h1> this is  a test </h1>
+<html>
+<font color="blue" size="14">Uniprint Troubleshooting</font>
+<div id="General" style="display:block;">
+<p><img src="https://confluence.linz.govt.nz/download/attachments/21344771/image2019-2-8_16-24-27.png"></p>
+<p><font color="red">Note:</font> This troubleshooting assumes you've already checked the Uniprint Settings. If you aren't sure whether they're correct, refer to the above screenshot for the recommended settings. If the user is getting a specific error when trying to print, <input type="button" value="click here" onclick="UniprintErrors()" /> otherwise, continue reading:</p>
+
+<p></p><br></br> <p>Establish whether its Uniprint or their printer settings that is causing the problem</p> <br></br> <input type="button" value="I know Uniprint is at fault" onclick="showUPatFault()" /> <input type="button" value="I'm not sure" onclick="showUnsureifUP()" /> <input type="button" value="Hide All" onclick="HideAll()" /> 
+</div>
+
+<div id="UniprintErrors" style="display:none;">
+<p>Below are links to various OurSpace articles for different errors/problems related to Uniprint. Please let me know if I've missed any.</p>
+
+<br><a href="https://confluence.linz.govt.nz/display/CSC/Uniprint+-+Spool+Path+Error">Spool Path Error</a>
+<br><a href="https://confluence.linz.govt.nz/display/CSC/Uniprint%3A+52+Bad+File+Name+or+Number">Error 52 - Bad File name or number</a>
+<br><a href="https://confluence.linz.govt.nz/display/CSC/Error+1056">Error 1056</a>
+<br><a href="https://confluence.linz.govt.nz/pages/viewpage.action?pageId=21348915">A&I printing in gibberish</a>
+<br><a href="https://confluence.linz.govt.nz/display/CSC/Maori+Land+Flag+report+in+the+Uniprint">Maori Land Flag report in Uniprint</a>
+<br><a href="https://confluence.linz.govt.nz/pages/viewpage.action?pageId=21344360">Uniprint defaulting in colour</a>
+<br><a href="https://confluence.linz.govt.nz/pages/viewpage.action?pageId=21344358">Uniprint US letter size</a>
+<br><a href="https://confluence.linz.govt.nz/display/CSC/Message+229">Message 229</a>
+<br><a href="https://confluence.linz.govt.nz/display/CSC/The+Data+Area+Path+to+a+System+Call+is+too+small">Data Area Path to a System Call is too small"</a>
+
+<p><input type="button" value="Back" onclick="General()" /><p>
+</div>
+
+ 
+
+
+
+<br></br>
+
+
+
+<div id="showUnsureifUP"  style="display:none;"><p>If the caller isn't sure, get them to print something outside of landonline e.g Microsoft Word / MSPaint. If this is successful, get the user to try print a Fees Report within Landonline to ensure its not related to the specific document they're printing.</p>
+
+<p>
+
+
+<input type="button" value="The printer worked outside of Landonline" onclick="showUPatFault()" />
+
+<input type="button" value="It didn't work outside of Landonline" onclick="referToIT()" /> 
+</div>
+
+
+<div id="showUPatFault"  style="display:none;"> Get the user to close out of Uniprint via System Tray, and then relaunch it. The user does not need to close out of Landonline to do this, they can just minimise it for now.
+<p></p>
+<br></br>
+<input type="button" value="Show me how to do this" onclick="showHowtoExit()" />
+<input type="button" value="I did this and it still didn't work" onclick="HowtoadjustCitrix()" /> 
+</div>
+<p>
+<div id="HowtoExpand" style="display:none;"> <b>Expanding System Tray:</b> This is fairly easy, just ask the user to click the arrow symbol to the left of the icons in their system tray.<p> <br><img src="https://i.imgur.com/WthZpUj.png"></br></p></div>
+<p>
+<div id="showHowtoExit"  style="display:none;"> <p> 1) Get the user to right click the Blue UP icon in their system tray, located on the bottom right hand corner of their primary display, then select "Exit" (There should also be a Grey UP symbol as well as the Blue one, do not worry about the Grey one). If the user cannot see it, get them to expand the system tray by clicking the expand icon.<p> <input type="button" value="How to expand the system tray" onclick="HowtoExpand()" />  </p>
+
+
+
+<br></br>
+<br><img src="https://i.imgur.com/zHOFz6a.png"></br>
+<p>2) Once closed, get the user to click their start menu, and whilst expanded ask them to type "Uniprint". Ask them to then click "Uniprint Client".Nothing will pop up, but if you get the user to look on the bottom right hand corner of their screen, the Blue UP symbol should of reappeared. IF they cannot find Uniprint this way, try the alt method below.
+<br><img src="https://i.imgur.com/K4ADUU8.jpg"></br>
+
+<p>ALT METHOD) Once closed, get the user to navigate to C:\Program Files\Uniprint Client\ and locate UPCinit.exe, double click it. Nothing will pop up, but if you get the user to look on the bottom right hand corner of their screen, the Blue UP symbol should of reappeared</p>
+<br><img src="https://i.imgur.com/t5XsEGZ.png"></br>
+
+<p>3) Now get the user to try print again; in most cases this should of resolved the problem. If they still can't print, check the Citrix Permissions</p>
+<p></p>
+<input type="button" value="How to check/adjust Citrix settings" onclick="HowtoadjustCitrix()" /> 
+<input type="button" value="Citrix Permissions are correct, still not working" onclick="reInstallUniprint()" /> 
+
+</div>
+
+<div id="referToIT" style="display:none;"> 
+<p>Advise the user to speak with their IT as the printing issue isn't isolated to Landonline, so is highly likely an issue with the printer or printer settings.
+</div>
+
+<div id="HowtoadjustCitrix" style="display:none;"> 
+If restarting Uniprint didn't resolve the issue, lets ensure the Citrix permissions are set correctly.
+<p>1) Right-click the Citrix Workspace icon in the system tray, 2) Select "Connection Center"</p>
+<br><img src="https://i.imgur.com/D5JtBof.png"</br>
+<p>3) select LOLPRDORBXDA035 and then select "preferences" 4) ensure "Read and Write" is selected, then apply settings
+<br><img src="https://i.imgur.com/ueaiPEG.png"></br>
+<p></p>
+<input type="button" value="Still cannot print?" onclick="reInstallUniprint()" /> 
+
+</div>
+
+<div id="reInstallUniprint" style="display:none;">
+<p>You'll need to get the user to Uninstall/Reinstall Uniprint, restart the PC, and then try again.</p>
+ </div>
+
+
+
+
+</html>
+
+ 
+
+<script>
+
+
+function showUPatFault() {
+document.getElementById('showUPatFault').style.display = "block";
+document.getElementById('showUnsureifUP').style.display = "none";
+document.getElementById('referToIT').style.display = "none"; 
+
+
+}
+
+function showUnsureifUP() {
+document.getElementById('showUnsureifUP').style.display = "block";
+document.getElementById('showUPatFault').style.display = "none";
+document.getElementById('referToIT').style.display = "none"; 
+document.getElementById('HowtoadjustCitrix').style.display = "none"; 
+
+
+}
+
+function showHowtoExit() {
+document.getElementById('showHowtoExit').style.display = "block";
+document.getElementById('HowtoadjustCitrix').style.display = "none"; 
+
+
+}
+
+function citrixTroubleshoot() { 
+document.getElementById('citrixTroubleshoot').style.display = "block"; 
+document.getElementById('referToIT').style.display = "none"; 
+
+}
+
+function referToIT() { 
+document.getElementById('referToIT').style.display = "block"; 
+document.getElementById('HowtoadjustCitrix').style.display = "none"; 
+document.getElementById('showUPatFault').style.display = "none";
+document.getElementById('showUnsureifUP').style.display = "none";
+
+}
+
+function HowtoadjustCitrix() { 
+
+document.getElementById('HowtoadjustCitrix').style.display = "block"; 
+
+
+
+}
+
+function reInstallUniprint() { 
+document.getElementById('reInstallUniprint').style.display = "block"; 
+
+}
+
+function HowtoExpand() { 
+document.getElementById('HowtoExpand').style.display = "block";
+}
+
+function HideAll() { 
+document.getElementById('showHowtoExit').style.display = "none";
+document.getElementById('HowtoExpand').style.display = "none"; 
+document.getElementById('HowtoadjustCitrix').style.display = "none"; 
+document.getElementById('showUPatFault').style.display = "none";
+document.getElementById('showUnsureifUP').style.display = "none";
+document.getElementById('referToIT').style.display = "none"; 
+document.getElementById('citrixTroubleshoot').style.display = "none"; 
+document.getElementById('reInstallUniprint').style.display = "none";
+
+
+}
+
+function UniprintErrors() { 
+document.getElementById('UniprintErrors').style.display = "block";
+document.getElementById('General').style.display = "none";  
+
+}
+
+function General() { 
+document.getElementById('UniprintErrors').style.display = "none"; 
+document.getElementById('General').style.display = "block"; }
+
+</script>
